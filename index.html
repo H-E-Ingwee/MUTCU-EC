@@ -3,116 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUTCU Executive Council Nominations</title>
+    <title>MUTCU Executive Council Nomination</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
     <style>
+        /* MUTCU Brand Styles */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Lato', sans-serif;
+            background-color: #052371; /* Navy Blue */
+            color: #ffffff;
         }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .mutcu-orange { color: #ff9700; }
+        .bg-mutcu-orange { background-color: #ff9700; }
+        .bg-mutcu-navy { background-color: #04003d; }
+        .border-mutcu-teal { border-color: #30d5c8; }
+        
+        /* Countdown Timer Styling */
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .countdown-number {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            line-height: 1;
+            color: #30d5c8; /* Teal */
+        }
+        .countdown-label {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
-
-    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 w-full max-w-2xl text-center">
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-hidden">
         
-        <!-- MUTCU Logo Placeholder -->
-        <div class="mx-auto bg-indigo-100 text-indigo-700 w-20 h-20 rounded-full flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.494m-5.747-8.994l11.494 0M4.253 12h15.494" />
-            </svg>
-        </div>
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 w-96 h-96 bg-mutcu-orange/10 rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-96 h-96 bg-mutcu-teal/10 rounded-full filter blur-3xl"></div>
 
-        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800">MUTCU EXECUTIVE COUNCIL NOMINATIONS</h1>
-        <p class="text-indigo-600 font-medium mt-2 text-lg">2025/2026 Spiritual Year</p>
+        <main class="w-full max-w-4xl mx-auto z-10">
+            <!-- Header -->
+            <header class="text-center mb-8">
+                <div class="flex justify-center items-center gap-4 mb-2">
+                    <img src="logo.png" alt="MUTCU Logo" class="h-24 w-auto">
+                </div>
+                <p class="text-sm md:text-base italic text-white/70">"To Inspire Love, Hope, and Godliness"</p>
+            </header>
 
-        <div class="mt-8 text-left border-t pt-8">
-            <h2 class="text-xl font-bold text-gray-800 mb-4">A Call to Prayerful Action</h2>
-            <p class="text-gray-600 leading-relaxed">
-                The time has come to identify the next leaders for our Christian Union. The Electoral Commission invites all eligible Full Members to participate in the official electronic nomination process. Your prayerful participation is highly valued.
-            </p>
+            <div class="bg-mutcu-navy/70 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-10 border border-white/10">
+                <div class="text-center">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3">
+                        SHAPE THE <span class="mutcu-orange">NEXT LEADERSHIP</span>
+                    </h1>
+                    <p class="max-w-2xl mx-auto text-base sm:text-lg text-white/80 mb-8">
+                        The MUTCU Executive Council nominations are now open. This is your opportunity to nominate the next generation of servant leaders who will guide our union. Your recommendations are crucial in shaping a leadership team that embodies our values and vision.
+                    </p>
+                </div>
 
-            <div class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <h3 class="font-semibold text-gray-700">Who Can Nominate?</h3>
-                <p class="text-sm text-gray-600 mt-1">All registered Full Members of MUTCU are invited to nominate. Please note that as per the MUTCU Constitution, first-year and final-year students are not eligible to nominate or be nominated.</p>
+                <!-- Countdown Timer -->
+                <div id="countdown-container" class="mb-10">
+                    <h3 class="text-center text-lg font-semibold tracking-widest mb-4">NOMINATIONS CLOSE IN</h3>
+                    <div id="timer" class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl mx-auto">
+                        <div class="countdown-box p-4 rounded-lg text-center">
+                            <span id="days" class="countdown-number">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-box p-4 rounded-lg text-center">
+                            <span id="hours" class="countdown-number">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-box p-4 rounded-lg text-center">
+                            <span id="minutes" class="countdown-number">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-box p-4 rounded-lg text-center">
+                            <span id="seconds" class="countdown-number">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                     <div id="deadline-message" class="hidden text-center mt-6 p-4 rounded-lg bg-red-500/20 border border-red-500/50">
+                        <h3 class="text-2xl font-bold">Nominations Have Closed</h3>
+                        <p>Thank you for your interest. The nomination period has ended.</p>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mb-8">
+                    <a href="https://forms.gle/kuNqE4dCpjWFh4CP9" target="_blank" 
+                       class="inline-block bg-mutcu-orange text-mutcu-navy font-bold text-lg uppercase tracking-widest py-4 px-10 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-orange-300">
+                        Nominate Now
+                    </a>
+                </div>
+
+                <!-- Nomination Instructions -->
+                <div class="border-t border-white/10 pt-6">
+                    <h3 class="text-center text-lg font-semibold tracking-widest mb-4">Key Instructions</h3>
+                    <ul class="list-disc list-inside max-w-lg mx-auto text-white/80 space-y-2 text-sm sm:text-base">
+                        <li>You must be a registered <span class="font-bold text-white">Full Member</span> (excluding first-years) to nominate.</li>
+                        <li>You must not have submitted a physical nomination ballot.</li>
+                        <li>Ensure your nominations adhere to the <span class="font-bold text-white">Gender Balancing Rule</span> for top leadership.</li>
+                        <li>First-year and finalist students are <span class="font-bold text-white">not eligible</span> to be nominated.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </main>
 
-        <!-- Countdown Timer -->
-        <div id="countdown-container" class="mt-8">
-            <p class="font-semibold text-gray-700 mb-2">Nomination Closes In:</p>
-            <div id="countdown" class="text-3xl font-bold text-indigo-600 bg-indigo-50 p-4 rounded-lg">
-                <!-- Countdown will be injected here by JavaScript -->
-            </div>
-             <p id="deadline-expired" class="hidden text-xl font-bold text-red-600 bg-red-50 p-4 rounded-lg">
-                The nomination period has ended.
-            </p>
-        </div>
-
-
-        <!-- Link to Google Form -->
-        <div class="mt-8">
-            <a id="nomination-link" href="#" onclick="openNominationForm(); return false;" class="block w-full bg-indigo-600 text-white font-bold py-4 px-6 rounded-lg text-xl hover:bg-indigo-700 transition-transform transform hover:scale-105 duration-300">
-                Go to Nomination Form
-            </a>
-        </div>
-
-        <div class="mt-12 border-t pt-6">
-            <p class="text-gray-500 italic">"Let us therefore come boldly to the throne of grace, that we may obtain mercy and find grace to help in time of need." - Hebrews 4:16</p>
-            <p class="text-sm text-gray-400 mt-4">Let's seek God's guidance in choosing leaders who will inspire love, hope, and godliness.</p>
-        </div>
-
+        <!-- Footer -->
+        <footer class="w-full max-w-4xl mx-auto text-center mt-8 text-sm text-white/50 z-10">
+            <p>&copy; <span id="year"></span> Murang'a University of Technology Christian Union (MUTCU). All rights reserved.</p>
+        </footer>
     </div>
 
     <script>
-        // --- CONFIGURATION ---
-        // IMPORTANT: Replace this with the public link to your Google Form.
-        // The public link usually ends with '/viewform'.
-        const googleFormUrl = "https://docs.google.com/forms/d/1CtYEBs7mHVAw6c3J0DstqV110vw9UgEtqBU7z_bmb5o/viewform";
+        // Set the date we're counting down to
+        const countDownDate = new Date("Oct 5, 2025 13:00:00").getTime();
 
-        // Set the deadline for the nominations.
-        // Format: "Month Day, Year HH:MM:SS"
-        const deadline = new Date("October 10, 2025 17:00:00").getTime();
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        const timerEl = document.getElementById('timer');
+        const deadlineMessageEl = document.getElementById('deadline-message');
 
-        // --- SCRIPT LOGIC ---
-        const countdownElement = document.getElementById('countdown');
-        const countdownContainer = document.getElementById('countdown-container');
-        const deadlineExpiredElement = document.getElementById('deadline-expired');
-        const nominationLink = document.getElementById('nomination-link');
+        // Update the count down every 1 second
+        const x = setInterval(function() {
 
-        function openNominationForm() {
-            if (new Date().getTime() < deadline) {
-                window.open(googleFormUrl, '_blank');
-            } else {
-                alert('The nomination period has already ended.');
-            }
-        }
-
-        const countdownInterval = setInterval(function() {
+            // Get today's date and time
             const now = new Date().getTime();
-            const distance = deadline - now;
 
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                countdownElement.classList.add('hidden');
-                deadlineExpiredElement.classList.remove('hidden');
-                nominationLink.classList.add('opacity-50', 'cursor-not-allowed');
-                nominationLink.classList.remove('hover:bg-indigo-700', 'hover:scale-105');
-                return;
-            }
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
 
+            // Time calculations for days, hours, minutes and seconds
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
+            // Display the result in the elements
+            daysEl.innerHTML = String(days).padStart(2, '0');
+            hoursEl.innerHTML = String(hours).padStart(2, '0');
+            minutesEl.innerHTML = String(minutes).padStart(2, '0');
+            secondsEl.innerHTML = String(seconds).padStart(2, '0');
+            
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                timerEl.style.display = 'none';
+                deadlineMessageEl.classList.remove('hidden');
+                document.querySelector('a[href*="forms.gle"]').style.pointerEvents = 'none';
+                document.querySelector('a[href*="forms.gle"]').style.opacity = '0.5';
+                document.querySelector('a[href*="forms.gle"]').innerHTML = 'Nominations Closed';
+            }
         }, 1000);
 
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
+
